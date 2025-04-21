@@ -51,4 +51,9 @@ struct ReadXLSX {
 	static TableFunction GetFunction();
 };
 
+struct XLSX_Sheets {
+	static void Register(DatabaseInstance &db);
+	static TableFunction GetFunction();
+};
+
 } // namespace duckdb

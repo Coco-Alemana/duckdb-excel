@@ -85,6 +85,7 @@ void ExcelExtension::Load(DuckDB &db) {
 	// Register the XLSX functions
 	ReadXLSX::Register(db_instance);
 	WriteXLSX::Register(db_instance);
+	XLSX_Sheets::Register(db_instance);
 }
 
 std::string ExcelExtension::Name() {

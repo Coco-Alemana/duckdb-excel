@@ -1,0 +1,19 @@
+require excel
+
+query I
+SELECT * FROM xlsx_sheets('test/data/xlsx/two_sheets.xlsx')
+----
+Sheet1
+My Sheet
+
+# También podés testear con archivos que tengan solo una hoja
+query I
+SELECT * FROM xlsx_sheets('test/data/xlsx/basic.xlsx')
+----
+Sheet 1
+
+# Si el archivo no existe, debería fallar con un error amigable
+statement error
+SELECT * FROM xlsx_sheets('test/data/xlsx/nonexistent.xlsx')
+----
+Cannot open file "test/data/xlsx/nonexistent.xlsx": No such file or directory
